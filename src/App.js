@@ -6,14 +6,11 @@ import TextForm from './component/TextForm';
 import About from './component/About';
 import React, { useState } from 'react';
 import Alert from './component/Alert';
-// import {
-//   BrowserRouter as Router,
-//   Switch,
-//   useLocation,
-//   Route,
-//   Link,
-//   Routes
-// } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes
+} from "react-router-dom";
 
 
 let Name = "Jay Bhagvan";
@@ -47,31 +44,32 @@ function App() {
   return (
     <>
 
-      {/* <Router> */}
-        {/* <h1>Jay Bhagvan React</h1>
+      <Router>
+      {/* <h1>Jay Bhagvan React</h1>
       <h1>Jay Bhagvan React {name}</h1> */}
 
-        {/* <Navbar/> */}
-        <Navbar title={Name} aboutText="Text" mode={mode} toggleMode={toggleMode} />
+      {/* <Navbar/> */}
+      <Navbar title={Name} aboutText="Text" mode={mode} toggleMode={toggleMode} />
 
-        <Alert alert={alert} showAlert={showAlert} />
+      <Alert alert={alert} showAlert={showAlert} />
 
-        {/* <Routes> */}
-          {/* <Route path="/about" element={}> */}
-
-          {/* </Route> */}
-          {/* <Route path="/" element={}> */}
-            <div className="container my-3">
-              <TextForm heading="Enter the Text for Analyze" />
-            </div>
-          {/* </Route> */}
-        {/* </Routes> */}
-
-        <About />
-        {/* <Demo/> */}
+      <Routes>
 
 
-      {/* </Router> */}
+
+        <Route exact path="/" element={
+          <div className="container my-3">
+            <TextForm heading="Enter the Text for Analyze" />
+          </div>} />
+        <Route exact path="/about" element={
+          <About />
+        } />
+      </Routes>
+
+      {/* <Demo/> */}
+
+
+      </Router>
 
 
     </>
